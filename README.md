@@ -40,7 +40,7 @@ Ejecución del proyecto con Docker
 
 Configuración de la base de datos en MongoDB Atlas
 
-Para efectos de revisión del proyecto se creó un usuario dedicado con permisos adecuados. Estos datos permiten que cualquier persona pueda acceder temporalmente al clúster para visualizar la información del proyecto.
+se creó un usuario dedicado con permisos adecuados. Estos datos permiten que cualquier persona pueda acceder temporalmente al clúster para visualizar la información del proyecto.
 
 Usuario: fintrack_user
 Contraseña: Prueba123
