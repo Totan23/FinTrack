@@ -1,0 +1,79 @@
+<div class="min-h-screen bg-white">
+  <!-- Header -->
+  <header class="bg-white border-b border-gray-200">
+    <div class="container mx-auto px-6 py-4">
+      <h1 class="text-3xl font-bold text-gray-900 text-center">
+        <span class="text-primary-600">Fin</span><span class="text-accent-600">Track</span>
+      </h1>
+    </div>
+  </header>
+
+  <!-- Main Menu -->
+  <main class="container mx-auto px-6 py-16">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-4xl font-bold text-gray-900 mb-12 text-center">Menú Principal</h2>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Mis Contactos -->
+        <button (click)="navigateToContacts()"
+          class="group bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-primary-400 transform hover:-translate-y-2">
+          <div
+            class="w-16 h-16 bg-primary-500 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-primary-600 transition-colors">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
+              </path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2 text-center">Mis Contactos</h3>
+          <p class="text-sm text-gray-600 text-center">Ver y gestionar todos tus contactos</p>
+        </button>
+
+        <!-- Crear Contacto -->
+        <button (click)="navigateToCreateContact()"
+          class="group bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-accent-400 transform hover:-translate-y-2">
+          <div
+            class="w-16 h-16 bg-accent-500 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-accent-600 transition-colors">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2 text-center">Crear Contacto</h3>
+          <p class="text-sm text-gray-600 text-center">Agregar un nuevo contacto al sistema</p>
+        </button>
+
+        <!-- Exportar Reportes -->
+        <button (click)="openExportModal()"
+          class="group bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-warning-400 transform hover:-translate-y-2">
+          <div
+            class="w-16 h-16 bg-warning-500 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-warning-600 transition-colors">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+              </path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2 text-center">Exportar Reportes</h3>
+          <p class="text-sm text-gray-600 text-center">Descargar transacciones en CSV</p>
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Contact Selector Modal -->
+  @if (showContactSelector) {
+    <app-contact-selector-modal 
+      (contactSelected)="onContactSelected($event)"
+      (exportAll)="onExportAll()"
+      (close)="closeContactSelector()">
+    </app-contact-selector-modal>
+  }
+
+  <!-- Export Modal -->
+  @if (showExportModal) {
+    <app-export-modal 
+      [contactId]="selectedContactId"
+      (close)="closeExportModal()">
+    </app-export-modal>
+  }
+</div>

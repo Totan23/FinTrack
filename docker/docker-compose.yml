@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  # Servicio del Backend
+  backend:
+    build:
+      context: ..
+      dockerfile: docker/backend/Dockerfile
+    container_name: fintrack-backend
+    ports:
+      - "3000:4000"  # Puerto externo:puerto interno del contenedor
+    environment:
+      - MONGODB_URI=${MONGODB_URI}
+      - PORT=4000
+      - NODE_ENV=production
+    restart: unless-stopped
+    depends_on:
+      - frontend
+
+  # Servicio del Frontend
+  frontend:
+    build:
+      context: ..
+      dockerfile: docker/frontend/Dockerfile
+    container_name: fintrack-frontend
+    ports:
+      - "4200:80"  # Puerto externo:puerto interno del contenedor
+    restart: unless-stopped
+
