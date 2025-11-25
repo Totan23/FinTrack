@@ -12,8 +12,7 @@ import { ExportModalComponent } from '../contacts/export-modal/export-modal.comp
         ContactSelectorModalComponent,
         ExportModalComponent
     ],
-    templateUrl: './landing.component.html',
-    styleUrl: './landing.component.scss'
+    templateUrl: './landing.component.html'
 })
 export class LandingComponent {
     private router = inject(Router);

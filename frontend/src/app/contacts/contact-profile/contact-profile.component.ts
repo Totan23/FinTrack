@@ -10,8 +10,7 @@ import type { ContactProfile, TransactionType } from '../../shared/interfaces';
     selector: 'app-contact-profile',
     standalone: true,
     imports: [CommonModule, FormsModule, ExportModalComponent],
-    templateUrl: './contact-profile.component.html',
-    styleUrl: './contact-profile.component.scss'
+    templateUrl: './contact-profile.component.html'
 })
 export class ContactProfileComponent implements OnInit {
     private route = inject(ActivatedRoute);

@@ -10,8 +10,7 @@ import { catchError } from 'rxjs/operators';
     selector: 'app-export-modal',
     standalone: true,
     imports: [CommonModule, FormsModule],
-    templateUrl: './export-modal.component.html',
-    styleUrl: './export-modal.component.scss'
+    templateUrl: './export-modal.component.html'
 })
 export class ExportModalComponent implements OnInit {
     @Input() contactId?: string;

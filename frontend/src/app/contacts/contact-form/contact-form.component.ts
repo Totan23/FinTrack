@@ -7,8 +7,7 @@ import { ContactsService } from '../../services/contacts.service';
     selector: 'app-contact-form',
     standalone: true,
     imports: [CommonModule, FormsModule],
-    templateUrl: './contact-form.component.html',
-    styleUrl: './contact-form.component.scss'
+    templateUrl: './contact-form.component.html'
 })
 export class ContactFormComponent {
     @Output() contactCreated = new EventEmitter<void>();

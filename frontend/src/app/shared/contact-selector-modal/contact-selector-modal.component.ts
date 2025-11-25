@@ -8,8 +8,7 @@ import type { Contact } from '../../shared/interfaces';
     selector: 'app-contact-selector-modal',
     standalone: true,
     imports: [CommonModule],
-    templateUrl: './contact-selector-modal.component.html',
-    styleUrl: './contact-selector-modal.component.scss'
+    templateUrl: './contact-selector-modal.component.html'
 })
 export class ContactSelectorModalComponent implements OnInit {
     @Output() contactSelected = new EventEmitter<string>();
